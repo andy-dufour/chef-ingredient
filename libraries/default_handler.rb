@@ -56,7 +56,8 @@ module ChefIngredient
         provider value_for_platform_family(
           'debian'  => Chef::Provider::Package::Dpkg,
           'rhel'    => Chef::Provider::Package::Rpm,
-          'windows' => Chef::Provider::Package::Windows
+          'windows' => Chef::Provider::Package::Windows,
+          'suse'    => Chef::Provider::Package::Zypper
         )
         if new_resource.product_name == 'chef'
           # We define this resource in ChefIngredientProvider
